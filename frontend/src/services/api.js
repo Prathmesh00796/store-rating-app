@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// In production, reads from VITE_API_URL; falls back to localhost:5000 in dev
-const rawBase = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+// Reads from VITE_API_URL in production/env; defaults to Render backend
+const rawBase = import.meta.env.VITE_API_URL || 'https://store-rating-backend-azun.onrender.com/api';
 const baseURL = rawBase.endsWith('/api') ? rawBase : `${rawBase.replace(/\/$/, '')}/api`;
 
 const api = axios.create({

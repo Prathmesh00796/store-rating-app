@@ -42,7 +42,15 @@ async function register(req, res) {
     res.status(201).json({ success: true, message: 'Registration successful.' });
   } catch (err) {
     console.error('Register error:', err);
-    res.status(500).json({ success: false, message: 'Server error.' });
+    let message = 'Server error.';
+    if (err.code === 'ER_NO_SUCH_TABLE') {
+      message = 'Database tables not found. Please run schema.sql and seed the database.';
+    } else if (err.code === 'ECONNREFUSED' || err.code === 'ENOTFOUND' || err.code === 'ER_ACCESS_DENIED_ERROR') {
+      message = `Database connection failed (${err.code}). Please check DB environment variables.`;
+    } else if (err.message) {
+      message = `Server error: ${err.message}`;
+    }
+    res.status(500).json({ success: false, message });
   }
 }
 
@@ -73,9 +81,10 @@ async function login(req, res) {
     }
 
     // Generate JWT token (payload: userId + role only — no sensitive data)
+    const jwtSecret = process.env.JWT_SECRET || 'store_rating_jwt_default_secret_key_2025';
     const token = jwt.sign(
       { userId: user.id, role: user.role },
-      process.env.JWT_SECRET,
+      jwtSecret,
       { expiresIn: '24h' }
     );
 
@@ -93,7 +102,15 @@ async function login(req, res) {
     });
   } catch (err) {
     console.error('Login error:', err);
-    res.status(500).json({ success: false, message: 'Server error.' });
+    let message = 'Server error.';
+    if (err.code === 'ER_NO_SUCH_TABLE') {
+      message = 'Database tables not found. Please run schema.sql and seed the database.';
+    } else if (err.code === 'ECONNREFUSED' || err.code === 'ENOTFOUND' || err.code === 'ER_ACCESS_DENIED_ERROR') {
+      message = `Database connection failed (${err.code}). Please check DB environment variables.`;
+    } else if (err.message) {
+      message = `Server error: ${err.message}`;
+    }
+    res.status(500).json({ success: false, message });
   }
 }
 

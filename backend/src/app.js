@@ -32,10 +32,27 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/owner', ownerRoutes);
 
 // ============================================
-// Health check
+// Health check (checks server and database)
 // ============================================
-app.get('/api/health', (req, res) => {
-  res.json({ success: true, message: 'API is running.' });
+app.get('/api/health', async (req, res) => {
+  try {
+    const db = require('./config/db');
+    await db.query('SELECT 1');
+    res.json({ 
+      success: true, 
+      message: 'API and database are running.', 
+      dbConnected: true,
+      engine: db.isSqlite ? 'sqlite-embedded' : 'mysql'
+    });
+  } catch (err) {
+    console.error('Health check DB error:', err.message);
+    res.status(500).json({
+      success: false,
+      message: 'API is running, but database connection failed.',
+      dbConnected: false,
+      error: err.message,
+    });
+  }
 });
 
 // ============================================

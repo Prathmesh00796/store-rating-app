@@ -1,7 +1,7 @@
 # ⭐ StoreRating — Full-Stack Store Rating Application
 
 > ### 🌐 **LIVE DEMO**: **[https://frontend-six-chi-82.vercel.app](https://frontend-six-chi-82.vercel.app)**
-> **⚡ Production API**: **[https://backend-ten-tan-58.vercel.app](https://backend-ten-tan-58.vercel.app)** | **🟢 API Health**: **[https://backend-ten-tan-58.vercel.app/api/health](https://backend-ten-tan-58.vercel.app/api/health)**
+> **⚡ Production API**: **[https://store-rating-backend-azun.onrender.com](https://store-rating-backend-azun.onrender.com)** | **🟢 API Health**: **[https://store-rating-backend-azun.onrender.com/api/health](https://store-rating-backend-azun.onrender.com/api/health)**
 >
 > 🔑 **Instant Demo Credentials:**
 > - **System Administrator**: `admin@example.com` / `Admin@123`
@@ -9,7 +9,7 @@
 > - **Normal User**: `user@example.com` / `User@123`
 
 [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Website-00C7B7?style=for-the-badge&logo=vercel&logoColor=white)](https://frontend-six-chi-82.vercel.app)
-[![API Health](https://img.shields.io/badge/🟢_API_Status-Online-brightgreen?style=for-the-badge&logo=express&logoColor=white)](https://backend-ten-tan-58.vercel.app/api/health)
+[![API Health](https://img.shields.io/badge/🟢_API_Status-Online-brightgreen?style=for-the-badge&logo=express&logoColor=white)](https://store-rating-backend-azun.onrender.com/api/health)
 [![Database](https://img.shields.io/badge/🗄️_Database-TiDB_Cloud_MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://tidbcloud.com)
 
 [![Node.js](https://img.shields.io/badge/Node.js-v18+-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
