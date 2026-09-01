@@ -1,8 +1,11 @@
 import axios from 'axios';
 
-// Create an Axios instance with the backend base URL
+// In production, reads from VITE_API_URL; falls back to localhost:5000 in dev
+const rawBase = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const baseURL = rawBase.endsWith('/api') ? rawBase : `${rawBase.replace(/\/$/, '')}/api`;
+
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL,
 });
 
 // Attach JWT token to every request automatically
