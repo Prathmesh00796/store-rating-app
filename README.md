@@ -270,35 +270,6 @@ npm run dev
 
 ---
 
-## 💡 Interview Preparation — Core Concepts
-
-### Q1: Why use React + Vite for the frontend?
-> **Answer**: React's component-driven architecture allows breaking the UI into isolated, reusable pieces (like `DataTable`, `RatingInput`, `StoreCard`). Vite provides instant dev server start and lightning-fast HMR (Hot Module Replacement) powered by native ES modules.
-
-### Q2: Why use Express.js for the backend?
-> **Answer**: Express is unopinionated, lightweight, and straightforward. For an interview challenge, it allows writing transparent, readable code with direct control over routes, middleware, and database access without framework magic.
-
-### Q3: Why is MySQL chosen over NoSQL for this application?
-> **Answer**: The application domain is strictly relational:
-> - A Store is owned by a User (`1:N`).
-> - Users submit Ratings for Stores (`M:N`).
-> Relational databases enforce referential integrity with foreign keys and prevent duplicate ratings with a `UNIQUE(user_id, store_id)` constraint.
-
-### Q4: How is duplicate rating prevention handled?
-> **Answer**: At the database level, `UNIQUE(user_id, store_id)` prevents inserting a second rating. At the application level, the controller checks if a rating exists: if yes, it directs the user to update via `PUT` instead of creating another row with `POST`.
-
-### Q5: How is the store rating calculated?
-> **Answer**: We use SQL's native aggregation:
-> ```sql
-> SELECT store_id, AVG(rating) AS averageRating FROM ratings GROUP BY store_id;
-> ```
-> This guarantees mathematical correctness in real time without risk of stored aggregate columns falling out of sync.
-
-### Q6: Why validate on both frontend and backend?
-> **Answer**: Frontend validation offers immediate visual feedback and a better user experience. However, frontend checks can easily be bypassed using curl or Postman. Backend validation is the mandatory defense layer that guarantees data integrity and application security.
-
----
-
 ## 📁 Repository Structure
 
 ```
