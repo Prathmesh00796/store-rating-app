@@ -219,52 +219,6 @@ npm run dev
 
 ---
 
-## 🌐 100% Free Cloud Deployment Guide
-
-This project is configured for **free, continuous deployment** using **Render** (for Backend API or full Blueprint), **Vercel** (for Frontend React SPA), and any free cloud MySQL provider (such as **Aiven**, **TiDB Cloud Serverless**, or **Clever Cloud**).
-
-### Step 1: Free Cloud Database (MySQL)
-1. Go to **[TiDB Cloud](https://tidbcloud.com/)** or **[Aiven](https://aiven.io/)** (both offer free MySQL-compatible cloud databases).
-2. Create a free MySQL database instance (e.g. named `store_rating`).
-3. Copy your connection URL or credentials (`DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`).
-4. Run the schema and seed scripts against your cloud database:
-   ```bash
-   mysql -h YOUR_CLOUD_HOST -u YOUR_USER -p store_rating < database/schema.sql
-   mysql -h YOUR_CLOUD_HOST -u YOUR_USER -p store_rating < database/seed.sql
-   ```
-
-### Step 2: Deploy Backend to Render (Free Web Service)
-1. Go to **[Render.com](https://render.com/)** and sign in with GitHub.
-2. Click **New +** → **Web Service**.
-3. Select your repository: `Prathmesh00796/store-rating-app`.
-4. Configure settings:
-   - **Root Directory**: `backend`
-   - **Build Command**: `npm install`
-   - **Start Command**: `npm start`
-   - **Instance Type**: Free
-5. Under **Environment Variables**, add:
-   - `DB_HOST`: Your cloud database host
-   - `DB_PORT`: `3306` (or your cloud port)
-   - `DB_NAME`: `store_rating`
-   - `DB_USER`: Your cloud database username
-   - `DB_PASSWORD`: Your cloud database password
-   - `DB_SSL`: `true`
-   - `JWT_SECRET`: Any random secure string (e.g. `prod_jwt_secret_xyz`)
-6. Click **Deploy Web Service**. Render gives you a live URL like: `https://store-rating-backend-xxxx.onrender.com`.
-
-### Step 3: Deploy Frontend to Vercel (Free)
-1. Go to **[Vercel.com](https://vercel.com/)** and sign in with GitHub.
-2. Click **Add New...** → **Project**.
-3. Select `Prathmesh00796/store-rating-app`.
-4. Configure project:
-   - **Framework Preset**: Vite
-   - **Root Directory**: Click "Edit" and choose `frontend`
-5. Under **Environment Variables**, add:
-   - `VITE_API_URL`: Your Render backend URL (e.g. `https://store-rating-backend-xxxx.onrender.com/api`)
-6. Click **Deploy**. Vercel will build and launch your live frontend in ~30 seconds!
-
----
-
 ## 🔑 Demo Credentials
 
 > ⚠️ *These credentials are created by the seed script for development and evaluation purposes.*
