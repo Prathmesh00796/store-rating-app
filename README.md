@@ -9,6 +9,12 @@
 
 A complete, production-quality, interview-friendly full-stack web application for an **Intern Coding Challenge**. The platform allows normal users to submit and modify ratings (1 to 5 stars) for registered stores, store owners to analyze their store ratings and customer feedback, and system administrators to oversee users, stores, and platform analytics.
 
+### 🌐 Live Production Deployment
+- 🚀 **Live Web Application**: **[https://frontend-six-chi-82.vercel.app](https://frontend-six-chi-82.vercel.app)**
+- ⚡ **Production REST API**: **[https://backend-ten-tan-58.vercel.app](https://backend-ten-tan-58.vercel.app)**
+- 🟢 **API Health Check**: **[https://backend-ten-tan-58.vercel.app/api/health](https://backend-ten-tan-58.vercel.app/api/health)**
+- 🗄️ **Cloud Database**: TiDB Cloud Serverless (AWS Singapore, MySQL 8.0+)
+
 ---
 
 ## 🎬 Live Animated Demo
