@@ -257,16 +257,6 @@ npm run dev
 | `GET` | `/api/owner/dashboard` | `STORE_OWNER` | Current store metrics and average rating |
 | `GET` | `/api/owner/ratings` | `STORE_OWNER` | List of customers who rated the store |
 
----
-
-## 🔒 Security & Best Practices
-
-1. **Password Hashing**: Passwords are never saved in plain text. Hashed using `bcryptjs` with 10 salt rounds before database persistence.
-2. **Stateless JWT Authorization**: JWT payload contains only non-sensitive claims (`userId`, `role`). Passwords are never embedded.
-3. **Role-Based Access Control (RBAC)**: Backend middleware strictly enforces permissions on every endpoint. Frontend route guards provide clean navigation.
-4. **Data Isolation**: Store Owners can only query data linked to their store via server-side session checks (`owner_id = req.user.userId`).
-5. **SQL Injection Prevention**: Parameterized queries are used throughout all database interactions.
-6. **Double Validation**: Complete validation runs on both the client (for user feedback) and server (for security).
 
 ---
 
