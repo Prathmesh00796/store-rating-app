@@ -1,5 +1,17 @@
 # ⭐ StoreRating — Full-Stack Store Rating Application
 
+> ### 🌐 **LIVE DEMO**: **[https://frontend-six-chi-82.vercel.app](https://frontend-six-chi-82.vercel.app)**
+> **⚡ Production API**: **[https://backend-ten-tan-58.vercel.app](https://backend-ten-tan-58.vercel.app)** | **🟢 API Health**: **[https://backend-ten-tan-58.vercel.app/api/health](https://backend-ten-tan-58.vercel.app/api/health)**
+>
+> 🔑 **Instant Demo Credentials:**
+> - **System Administrator**: `admin@example.com` / `Admin@123`
+> - **Store Owner**: `owner@example.com` / `Owner@123`
+> - **Normal User**: `user@example.com` / `User@123`
+
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Website-00C7B7?style=for-the-badge&logo=vercel&logoColor=white)](https://frontend-six-chi-82.vercel.app)
+[![API Health](https://img.shields.io/badge/🟢_API_Status-Online-brightgreen?style=for-the-badge&logo=express&logoColor=white)](https://backend-ten-tan-58.vercel.app/api/health)
+[![Database](https://img.shields.io/badge/🗄️_Database-TiDB_Cloud_MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://tidbcloud.com)
+
 [![Node.js](https://img.shields.io/badge/Node.js-v18+-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 [![Express.js](https://img.shields.io/badge/Express.js-v4.21-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
 [![React](https://img.shields.io/badge/React-v19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
@@ -8,12 +20,6 @@
 [![JWT](https://img.shields.io/badge/JWT-Secure_Auth-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)](https://jwt.io/)
 
 A complete, production-quality, interview-friendly full-stack web application for an **Intern Coding Challenge**. The platform allows normal users to submit and modify ratings (1 to 5 stars) for registered stores, store owners to analyze their store ratings and customer feedback, and system administrators to oversee users, stores, and platform analytics.
-
-### 🌐 Live Production Deployment
-- 🚀 **Live Web Application**: **[https://frontend-six-chi-82.vercel.app](https://frontend-six-chi-82.vercel.app)**
-- ⚡ **Production REST API**: **[https://backend-ten-tan-58.vercel.app](https://backend-ten-tan-58.vercel.app)**
-- 🟢 **API Health Check**: **[https://backend-ten-tan-58.vercel.app/api/health](https://backend-ten-tan-58.vercel.app/api/health)**
-- 🗄️ **Cloud Database**: TiDB Cloud Serverless (AWS Singapore, MySQL 8.0+)
 
 ---
 
